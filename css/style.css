@@ -4,7 +4,7 @@ body {
   font-family: "Montserrat", sans-serif;
   
 }
-/* search-box Style */
+/*----------- search-box Style----------- */
  .search-field {
    width: 350px;
    border: none;
@@ -30,11 +30,11 @@ body {
   border-radius: 20px;
   margin-left: 57.8px;
 } 
-/* Product Cart style */
+/*------------ Product Card style------------- */
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px; 
+  grid-gap: 20px; 
   text-align: center;
   width: 100%;
   margin: auto;
@@ -43,26 +43,53 @@ body {
 }
 .card-footer{
   margin-top: 30px;
-  /* position: absolute; */
 }
 .single-product {
-  /* position: relative; */
-  height: 630px;
+  height: 550px;
   padding: 10px;
   transition: 0.6s;
-  background: linear-gradient(to right, #eaeeea, #ffffff);
+  background: linear-gradient(to right, #e6e9e6, #ffffff);
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
   border-radius: 10px;
-  border: 1px solid cyan;
-  background: linear-gradient(to left, #dde2dd, #ffffff);
+  border: 1px solid #b1d4b1;
+
   
 }
 .product-image {
   width: 200px;
   height: 200px;
 }
+/* .........Rating Star add  ................ */
+.stars-outer {
+  position: relative;
+  display: inline-block;
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.stars-outer::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ccc;
+}
+
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #f8ce0b;
+}
+
+/*------------- Cart Styles----------- */
 .cart {
   width: 350px;
   padding: 10px;
@@ -74,6 +101,7 @@ body {
 .cart-main {
   padding-right: 30px;
 }
+
 /* Responsive Section */
 
 /* Responsive Section for pad */

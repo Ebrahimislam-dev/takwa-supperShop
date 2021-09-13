@@ -19,18 +19,22 @@ const showProducts = (products) => {
   for (const product of allProducts) {
     //  Get image dynamically
     const image = product.image;
+    //  Get Rating dynamically
+    const rating = product.rating.rate;
     const div = document.createElement("div");
     div.classList.add("product");
     // Creating cart dynamically 
-    div.innerHTML = `<div class="single-product text-left mx-5 ">
+    div.innerHTML = `<div class="single-product text-center">
       <div>
         <img class="product-image" src="${image}"></img>
       </div>
-      <h3>${product.title}</h3>
-      <p>Category: ${product.category}</p>
-      <h3>Price: $ ${product.price}</h3>
+      <h4 class="Text-center">${product.title}</h4>
+      <p>Category: ${product.category}</p> 
       <h4>${product.rating.count} People rate this  </h4>
-      <h4> Customers Rating: ${product.rating.rate} <i class="fas fa-star text-primary"></i> </h4>
+      <h4> Customers Rating: ${rating}/5</h4>
+      <div class="stars-outer">
+       <div class="stars-inner" style="width:${((rating / 5) * 100)}%"></div></div>  
+      <h2>Price: $ ${product.price}</h2>
       <footer class="card-footer">
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button  onclick="loadDetails()" id="details-btn" class="btn btn-primary">Details</button>
@@ -60,7 +64,6 @@ const getInputValue = (id) => {
 
 // main price update function
 const updatePrice = (id, value) => {
-  console.log(id);
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
