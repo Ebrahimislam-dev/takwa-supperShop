@@ -1,30 +1,4 @@
-/* const loadDetails = () => {
-  fetch('https://fakestoreapi.com/products/1')
-    .then(res => res.json())
-    .then((data) => showDetails(data));
-
-
-}
-
-const showDetails = (productDetails) => {
-  console.log(productDetails);
-  const detailsDiv = document.getElementById('showDetails');
-  for (const details of productDetails) {
-    detailsDiv.innerHTML = `
-        <div  class="card h-100">
-           <img src="${details.image}" class="card-img-top" alt="...">
-             <div class="card-body">
-              <h5 class="card-title">${details.category}</h5>
-                      
-           </div>
-         </div>
-         `;
-
-  }
-}
-
-//  for single data*/
-
+// Get products by Api and load in website
 const loadProducts = () => {
   const searchField = document.getElementById('input-field');
   const searchText = searchField.value;
@@ -36,27 +10,17 @@ const loadProducts = () => {
 
     .then((data) => showProducts(data));
 };
-
-
-/* const loadProducts = () => {
-  const url = `https://fakestoreapi.com/products`;
-  fetch(url)
-    .then((response) => response.json())
-
-    .then((data) => showProducts(data));
-}; */
 loadProducts();
 
 // show all product in UI 
 const showProducts = (products) => {
-  // console.log(products);
   const allProducts = products.map((pd) => pd);
-
   for (const product of allProducts) {
+    //  Get image dynamically
     const image = product.image;
-    // console.log(image);
     const div = document.createElement("div");
     div.classList.add("product");
+    // Creating cart dynamically 
     div.innerHTML = `<div class="single-product text-left mx-5">
       <div>
         <img class="product-image" src="${image}""></img>
@@ -73,11 +37,13 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+
+//////////// Cart Section ///////////////
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
   updatePrice("price", price);
-
   updateTaxAndCharge();
   updateTotal();
   document.getElementById("total-Products").innerText = count;
