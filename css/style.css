@@ -4,28 +4,30 @@ body {
   
 }
  .search-field {
-   width: 400px;
+   width: 350px;
   border: none;
-  /* border-radius: 50px; */
+
+   /* border-radius: 50px;  */
   padding: 5px;
   outline: none;
 }
-.search-field:hover {
+ .search-field:hover {
   outline: none;
   border: none;
-}
+} 
 .search-box {
   /* border: 1px solid rgb(146, 198, 240); */
-  width: 600px;
+  width: 500px;
   /* border-radius: 5px; */
   margin-left: 330px;
   margin-top: 30px;
   border-right: none;
+  box-shadow: 2px 2px 7px;
 }
 .search-button {
   padding: 10px 50px;
-  border-radius: 25px;
-  margin-left: 20px;
+  border-radius: 20px;
+  margin-left: 57.8px;
 } 
 #all-products {
   display: grid;

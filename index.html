@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Takwa_Store</title>
+  <title>Takwa_Super_Store</title>
   <link rel="stylesheet" href="css/style.css" />
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -21,7 +21,11 @@
 <body class="container" style="background: linear-gradient(to right, #ece9e6, #ffffff);">
   <!----------------- header section  ---------------->
   <header>
-    <h2 class=" text-center text-success fw-bold mt-5 ">Search Your Favourite Product</h2>
+
+    <h1 class=" text-center fw-bold">Welcome to <span class=" fw-bolder text-success text-uppercase">Takwa </span>
+      Supper
+      Store </h1>
+    <h3 class=" text-center text-success fw-bold mt-5 ">Search Your Favourite Product</h3>
     <!------------- search Field----------->
     <div class="search-field">
       <div class="search-box">
@@ -29,8 +33,9 @@
         <input type="text" id="input-field" class=" search-field "
           placeholder="Input a Product name to get your desire Product" aria-label="Recipient's username"
           aria-describedby="button-addon2">
-        <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
+        <button type="button" class="btn btn-success search-button" data-toggle="button" aria-pressed="false"
           autocomplete="off" id="search-btn" onclick="loadProducts()">
+          <i class="fas fa-search me-1" aria-hidden="true"></i>
           Search
         </button>
       </div>
@@ -94,7 +99,7 @@
             </tbody>
           </table>
           <div class="parces text-center">
-            <button class="btn btn-primary text-center">Buy Now</button>
+            <button class="btn btn-success text-center">Buy Now</button>
           </div>
         </div>
       </div>

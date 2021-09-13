@@ -25,16 +25,26 @@ const showDetails = (productDetails) => {
 
 //  for single data*/
 
-
-
-
 const loadProducts = () => {
+  const searchField = document.getElementById('input-field');
+  const searchText = searchField.value;
+  searchField.value = "";
+
   const url = `https://fakestoreapi.com/products`;
   fetch(url)
     .then((response) => response.json())
 
     .then((data) => showProducts(data));
 };
+
+
+/* const loadProducts = () => {
+  const url = `https://fakestoreapi.com/products`;
+  fetch(url)
+    .then((response) => response.json())
+
+    .then((data) => showProducts(data));
+}; */
 loadProducts();
 
 // show all product in UI 
@@ -53,11 +63,11 @@ const showProducts = (products) => {
       </div>
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
-      <h2>Price: $ ${product.price}</h2>
+      <h3>Price: $ ${product.price}</h3>
       <h4>${product.rating.count} People rate this  </h4>
-      <h4> Customers Rating: ${product.rating.rate} <i class="fas fa-star text-success"></i> </h4>
+      <h4> Customers Rating: ${product.rating.rate} <i class="fas fa-star text-primary"></i> </h4>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button  onclick="loadDetails()" id="details-btn" class="btn btn-danger">Details</button>
+      <button  onclick="loadDetails()" id="details-btn" class="btn btn-primary">Details</button>
       </div>
       `;
     document.getElementById("all-products").appendChild(div);
