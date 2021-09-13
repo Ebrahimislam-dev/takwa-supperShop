@@ -4,7 +4,8 @@ const loadProducts = () => {
   const searchText = searchField.value;
   searchField.value = "";
 
-  const url = `https://fakestoreapi.com/products`;
+  const url = `https://raw.githubusercontent.com/ProgrammingHero1/ranga-store-api/main/ranga-api.json`;
+  // https://fakestoreapi.com/products
   fetch(url)
     .then((response) => response.json())
 
@@ -21,17 +22,19 @@ const showProducts = (products) => {
     const div = document.createElement("div");
     div.classList.add("product");
     // Creating cart dynamically 
-    div.innerHTML = `<div class="single-product text-left mx-5">
+    div.innerHTML = `<div class="single-product text-left mx-5 ">
       <div>
-        <img class="product-image" src="${image}""></img>
+        <img class="product-image" src="${image}"></img>
       </div>
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
       <h3>Price: $ ${product.price}</h3>
       <h4>${product.rating.count} People rate this  </h4>
       <h4> Customers Rating: ${product.rating.rate} <i class="fas fa-star text-primary"></i> </h4>
+      <footer class="card-footer">
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button  onclick="loadDetails()" id="details-btn" class="btn btn-primary">Details</button>
+      </footer>
       </div>
       `;
     document.getElementById("all-products").appendChild(div);

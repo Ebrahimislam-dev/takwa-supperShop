@@ -34,22 +34,30 @@ body {
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
+  grid-gap: 40px; 
   text-align: center;
   width: 100%;
   margin: auto;
   align-items: center;
   justify-content: center;
 }
+.card-footer{
+  margin-top: 30px;
+  /* position: absolute; */
+}
 .single-product {
+  /* position: relative; */
+  height: 630px;
   padding: 10px;
   transition: 0.6s;
+  background: linear-gradient(to right, #eaeeea, #ffffff);
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
   border-radius: 10px;
   border: 1px solid cyan;
-  background: linear-gradient(to right, #dde2dd, #ffffff);
+  background: linear-gradient(to left, #dde2dd, #ffffff);
+  
 }
 .product-image {
   width: 200px;
